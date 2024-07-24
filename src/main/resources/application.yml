@@ -1,0 +1,35 @@
+
+
+spring:
+  resources:
+    cache-period: 0
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  thymeleaf:
+    prefix: classpath:static/
+    suffix: .html
+    cache: false # 캐시설정, TODO: 운영에서는 true 로 한다고 함.
+    check-template-location: true # templates 디렉토리 검사(파일 없으면 에러 발생)
+  mvc:
+    static-path-pattern: /static/**
+
+  #####디폴트 db 설정####
+  datasource:
+    url: jdbc:sqlserver://ms1902.gabiadb.com;DatabaseName=threedays;encrypt=true;trustServerCertificate=true
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: threedays
+    password: three05days16
+  output:
+    ansi:
+      enabled: always
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
